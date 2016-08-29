@@ -9,4 +9,12 @@ defmodule CLITest do
     assert parse_args(["--help"]) == :help
   end
 
+  test "one filename is returned if one is given" do
+    assert parse_args(["filename.csv"]) == { "filename.csv", "directory.html" }
+  end
+
+  test "optional second filename is returned if given as well" do
+    assert parse_args(["filename.csv", "new_file.html"]) == { "filename.csv", "new_file.html" }
+  end
+
 end

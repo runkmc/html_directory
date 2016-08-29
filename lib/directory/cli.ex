@@ -8,7 +8,7 @@ defmodule Directory.CLI do
   @default_name "directory.html"
 
   def run(argv) do
-    parse_args(argv)
+    argv |> parse_args
   end
 
   @doc """
@@ -20,8 +20,8 @@ defmodule Directory.CLI do
     parse = OptionParser.parse(argv, switches: [help: :boolean], aliases: [h: :help])
     case parse do
       { [help: true], _, _} -> :help
-      {_,csv_filename, directory_filename } -> { csv_filename, directory_filename }
-      {_,csv_filename,_} -> { csv_filename, @directory_filename }
+      { _, [csv_filename], _ } -> { csv_filename, @default_name }
+      { _, [csv_filename, directory_filename], _ } -> { csv_filename, directory_filename }
     end
   end
 
