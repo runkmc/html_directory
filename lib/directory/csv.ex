@@ -20,7 +20,7 @@ defmodule Directory.CSV do
 
   defp csv_data(line, fun) do
     line
-      |> String.strip
+      |> String.trim
       |> String.split(",") 
       |> Enum.map(fun)
   end
