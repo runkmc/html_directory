@@ -8,7 +8,7 @@ defmodule Directory.CLI do
   @default_name "directory.html"
 
   def run(argv) do
-    argv |> parse_args
+    argv |> parse_args |> process
   end
 
   @doc """
