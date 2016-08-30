@@ -25,4 +25,11 @@ defmodule Directory.CLI do
     end
   end
 
+  def process(:help) do
+    IO.puts """
+    usage: directory <csv filename> [ <html filename> | directory.html ]
+    """
+    System.halt(0)
+  end
+
 end
