@@ -1,0 +1,3 @@
+HouseholdID,Family Name,Street (Permanent Address),City (Permanent Address),State (Permanent Address),Zip (Permanent Address),Street (Mailing Address),City (Mailing Address),State (Mailing Address),Zip (Mailing Address),Uses Mailing Address,Addressee,Email Addresses,Members,Phone Numbers,Send Newsletter
+961961722,Sisko,10 Habitat Ring Dr.,Beverly Hills,CA,90210,"","","","",FALSE,The Benjamin Sisko Household,"","Jake, Benjamin","",Yes
+961687365,Crusher,900 Level St.,Enterprise,AL,36330,"","","","",FALSE,The Beverly Crusher Household,"","Beverly, Wesley","",Yes
