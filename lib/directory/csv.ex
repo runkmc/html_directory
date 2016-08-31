@@ -16,7 +16,8 @@ defmodule Directory.CSV do
       |> String.replace(" ", "_")
       |> String.replace(~r{[\(\)]}, "")
       |> String.downcase
-      |> csv_data(&String.to_atom/1)
+      |> String.split(",")
+      |> Enum.map(&String.to_atom/1)
   end
 
   def create_line(line, headers) do
@@ -25,13 +26,6 @@ defmodule Directory.CSV do
       |> String.split(~r/,(?=(?:[^"]*"[^"]*")*[^"]*$)/)
     Enum.zip(headers, data) 
       |> Enum.into(%{})
-  end
-
-  defp csv_data(line, fun) do
-    line
-      |> String.trim
-      |> String.split(",") 
-      |> Enum.map(fun)
   end
 
 end

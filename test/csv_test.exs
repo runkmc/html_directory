@@ -20,5 +20,6 @@ defmodule CSVTest do
     assert (List.first data)[:family_name] == "Sisko"
     assert (List.first data)[:members] == "\"Jake, Benjamin\""
     assert (List.first data)[:phone_numbers] == "\"\""
+    assert (List.last data)[:street_permanent_address] == "900 Level St."
   end
 end
