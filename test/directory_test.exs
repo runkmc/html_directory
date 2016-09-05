@@ -1,8 +1,12 @@
 defmodule DirectoryTest do
   use ExUnit.Case
+  import ExUnit.CaptureIO
   doctest Directory
 
-  test "the truth" do
-    assert 1 + 1 == 2
+  test "creating the html" do
+    assert String.contains?(capture_io(fn ->
+      Directory.finish(:stdio, [%{addressee: "The Sisko Household"}])
+    end), "Sisko")
   end
+    
 end
