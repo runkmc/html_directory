@@ -22,6 +22,7 @@ defmodule Directory.CLI do
       { [help: true], _, _} -> :help
       { _, [csv_filename], _ } -> { csv_filename, @default_name }
       { _, [csv_filename, directory_filename], _ } -> { csv_filename, directory_filename }
+      { _, _, _} -> :help
     end
   end
 
@@ -30,6 +31,10 @@ defmodule Directory.CLI do
     usage: directory <csv filename> [ <html filename> | directory.html ]
     """
     System.halt(0)
+  end
+
+  def process({csvname, htmlname}) do
+    {csvname, htmlname}
   end
 
 end
